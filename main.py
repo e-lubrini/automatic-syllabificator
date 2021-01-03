@@ -43,7 +43,6 @@ class SampaWord:
         self.s_word = list(self.word)
 
         for i, char in enumerate(list(self.word)):
-            print(i, len(list(self.word)))
             #i = index(char)
 
             # 1 consonant between 2 vowels VCV  consonant in onset position of the second syllable;
