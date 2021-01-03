@@ -21,8 +21,9 @@ class FrenchWord:
 
 
 class SampaWord:
-    def __init__(self, word):
+    def __init__(self, word, transcription):
         self.word = word
+        self.transcription = transcription
         self.s_word = self._split_word()
         self.cv = self._get_cv()
         self.s_cv = self._split_cv()
@@ -40,9 +41,9 @@ class SampaWord:
         vowels = [*oral_vowels, *nasal_vowels]
         consonants = [*semi_vowels, *plosives, *fricatives, *liquids, *nasals]
 
-        self.s_word = list(self.word)
+        self.s_word = list(self.transcription)+[' ', ' ', ' ']
 
-        for i, char in enumerate(list(self.word)):
+        for i, char in enumerate(list(self.transcription)+[' ', ' ', ' ']):
             #i = index(char)
 
             # 1 consonant between 2 vowels VCV  consonant in onset position of the second syllable;
@@ -133,7 +134,7 @@ class SampaWord:
 
 if __name__ == '__main__':
     #main()
-    s = SampaWord('bouteille')
+    s = SampaWord('bouleverserait', 'bulvERs*RE')
     print(s.cv)
     print(s.word)
     print(s.s_cv)
