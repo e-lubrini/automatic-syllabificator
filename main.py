@@ -3,7 +3,7 @@ import pandas
 
 
 class FrenchWord:
-    def __init__(self, word='', cv=''):
+    def __init__(self, word=''):
         self.word = word
         self.cv = self._get_cv()
 
@@ -21,7 +21,7 @@ class FrenchWord:
 
 
 class SampaWord:
-    def __init__(self, word, s_word='', cv='', s_cv=''):
+    def __init__(self, word):
         self.word = word
         self.s_word = self._split_word()
         self.cv = self._get_cv()
@@ -40,64 +40,64 @@ class SampaWord:
         vowels = [*oral_vowels, *nasal_vowels]
         consonants = [*semi_vowels, *plosives, *fricatives, *liquids, *nasals]
 
-        self.s_word = self.word
+        self.s_word = list(self.word)
 
-        for char in self.word:
-            i = index(char)
+        for i, char in enumerate(list(self.word)):
+            print(i, len(list(self.word)))
+            #i = index(char)
 
             # 1 consonant between 2 vowels VCV  consonant in onset position of the second syllable;
-            if s_word[i] in vowels and s_word[i + 1] in consonants and s_word[i + 2] in vowels:
-                s_word[i:(i + 3)] = s_word[i] + '-' + s_word[i + 1:i + 3]
+            if self.s_word[i] in vowels and self.s_word[i + 1] in consonants and self.s_word[i + 2] in vowels:
+                self.s_word[i:(i + 3)] = self.s_word[i] + '-' + "".join(self.s_word[i + 1:i + 3])
 
 
             # 2 adjacent vowels VV  2 syllables;
-            elif s_word[i] in vowels and s_word[i + 1] in vowels:
-                s_word[i:(i + 2)] = s_word[i] + '-' + s_word[i + 1]
+            elif self.s_word[i] in vowels and self.s_word[i + 1] in vowels:
+                self.s_word[i:(i + 2)] = self.s_word[i] + '-' + self.s_word[i + 1]
 
             # 2 consonants between two vowels: VCCV
-            elif s_word[i] in vowels and s_word[i + 1] in consonants and s_word[i + 2] in consonants and s_word[
+            elif self.s_word[i] in vowels and self.s_word[i + 1] in consonants and self.s_word[i + 2] in consonants and self.s_word[
                 i + 3] in vowels:
 
                 # the first consonant is different from liquids and semi-vowels and the second is a liquid or a
                 # semivowel  the whole consonant cluster in onset position of the next syllable (note: never
                 # separate a consonant from a semivowel or a liquid). V-CCV
-                if s_word[i + 1] not in [*liquids, *semi_vowels] and s_word[i + 2] in [*liquids, *semi_vowels]:
-                    s_word[i:i + 4] = s_word[i] + '-' + s_word[i + 1:i + 4]
+                if self.s_word[i + 1] not in [*liquids, *semi_vowels] and self.s_word[i + 2] in [*liquids, *semi_vowels]:
+                    self.s_word[i:i + 4] = self.s_word[i] + '-' + "".join(self.s_word[i + 1:i + 4])
 
                 # 2 liquids   syllabic boundary between the two liquids;
                 # VC-CV
-                elif s_word[i + 1] in [*liquids, *semi_vowels] and s_word[i + 2] in [*liquids, *semi_vowels]:
-                    s_word[i:i + 4] = s_word[i:i + 2] + '-' + s_word[i + 2:i + 4]
+                elif self.s_word[i + 1] in [*liquids, *semi_vowels] and self.s_word[i + 2] in [*liquids, *semi_vowels]:
+                    self.s_word[i:i + 4] = "".join(self.s_word[i:i + 2]) + '-' + "".join(self.s_word[i + 2:i + 4])
 
                 # the first consonant is a liquid and a second is not a liquid neither a semi-vowel  syllabic
                 # boundary between the two consonants. VC-CV
-                elif s_word[i + 1] in liquids and s_word[i + 2] not in [*liquids, *semi_vowels]:
-                    s_word[i:i + 4] = s_word[i:i + 2] + '-' + s_word[i + 2:i + 4]
+                elif self.s_word[i + 1] in liquids and self.s_word[i + 2] not in [*liquids, *semi_vowels]:
+                    self.s_word[i:i + 4] = "".join(self.s_word[i:i + 2]) + '-' + "".join(self.s_word[i + 2:i + 4])
 
                 # the first consonant is a semi-vowel and the second any consonant  syllabic boundary between the
                 # semi-vowel and the second consonant. VC-CV
-                elif s_word[i + 1] in semi_vowel:
-                    s_word[i:i + 4] = s_word[i:i + 2] + '-' + s_word[i + 2:i + 4]
+                elif self.s_word[i + 1] in semi_vowels:
+                    self.s_word[i:i + 4] = "".join(self.s_word[i:i + 2]) + '-' + "".join(self.s_word[i + 2:i + 4])
 
                 # the two adjacent consonants are neither liquids nor semi-vowel  syllabic boundary between the two
                 # consonants. VC-CV
-                if s_word[i + 1] not in [*liquids, *semi_vowels] and s_word[i + 2] not in [*liquids, *semi_vowels]:
-                    s_word[i:i + 4] = s_word[i:i + 2] + '-' + s_word[i + 2:i + 4]
+                if self.s_word[i + 1] not in [*liquids, *semi_vowels] and self.s_word[i + 2] not in [*liquids, *semi_vowels]:
+                    self.s_word[i:i + 4] = "".join(self.s_word[i:i + 2]) + '-' + "".join(self.s_word[i + 2:i + 4])
 
             # 3 consonants between 2 vowels: VCCCV
-            elif s_word[i] in vowels and s_word[i + 1] in consonants and s_word[i + 2] in consonants and s_word[
-                i + 3] in consonants and s_word[i + 4] in vowels:
+            elif self.s_word[i] in vowels and self.s_word[i + 1] in consonants and self.s_word[i + 2] in consonants and self.s_word[
+                i + 3] in consonants and self.s_word[i + 4] in vowels:
 
                 # the first is not a liquid nor a semi-vowel, the second is a liquid and the third a semi-vowel  the
                 # whole consonant cluster in onset position. V-CCCV
-                if s_word[i + 1] not in [*liquids, *semi_vowels] and s_word[i + 2] in liquids and s_word
-                    [i + 3] in semi_vowels:
-                    s_word[i:i + 5] = s_word[i] + '-' + s_word[i + 1:i + 5]
+                if self.s_word[i + 1] not in [*liquids, *semi_vowels] and self.s_word[i + 2] in liquids and self.s_word[i + 3] in semi_vowels:
+                    self.s_word[i:i + 5] = self.s_word[i] + '-' + self.s_word[i + 1:i + 5]
 
                 # 3 consonants (or more): they are neither liquids nor semi-vowels  syllabic boundary between the
                 # two first or two last consonants VC-CCV
                 else:
-                    s_word[i:i + 5] = s_word[i:i + 2] + '-' + s_word[i + 2:i + 5]
+                    self.s_word[i:i + 5] = self.s_word[i:i + 2] + '-' + self.s_word[i + 2:i + 5]
 
             # continue if char is a dash '-'
             else:
@@ -108,29 +108,34 @@ class SampaWord:
     def _get_cv(self):
 
         vowels = {'a', 'e', 'i', 'u', 'o', 'y', 'E', '9', '2', 'O', '*', '@', '1', '5'}
-
+        cv = ''
         for char in self.word:
             if char in vowels:
-                self.cv += 'V'
+                cv += 'V'
             else:
-                self.cv += 'C'
+                cv += 'C'
 
-        return self.cv
+        return cv
 
     def _split_cv(self):
 
         vowels = {'a', 'e', 'i', 'u', 'o', 'y', 'E', '9', '2', 'O', '*', '@', '1', '5'}
-
+        s_cv = ''
         for char in self.word:
             if char == '-':
-                self.s_cv += '-'
+                s_cv += '-'
             elif char in vowels:
-                self.s_cv += 'V'
+                s_cv += 'V'
             else:
-                self.s_cv += 'C'
+                s_cv += 'C'
 
-        return self.s_cv
+        return s_cv
 
 
 if __name__ == '__main__':
-    main()
+    #main()
+    s = SampaWord('bouteille')
+    print(s.cv)
+    print(s.word)
+    print(s.s_cv)
+    print(s.s_word)
