@@ -1394,7 +1394,8 @@ concordance k1kORd@s
 concordat k1kORda
 concrète k1kREt
 concrétisèrent k1kRetizER
-concupiscent k1kypis@;k1kypis
+concupiscent k1kypis@
+concupiscent k1kypis
 concussions k1kysj1
 condamnant k1dan@
 condensait k1d@sE
@@ -1542,7 +1543,8 @@ cordonnière kORdOnjER
 corés kORe
 corinthien kOR5tj5
 cornées kORnER
-corner kORne;kORnER
+corner kORne
+corner kORnER
 cornet kORnE
 corons kOR1
 corporations kORpORasj1
@@ -2160,7 +2162,8 @@ discuterait diskytRE
 discutions diskytj1
 disgracieuses disgRasj2z
 disjoignait disZwaNE
-disjonctions disZ1ksj1;disZ1ktj1
+disjonctions disZ1ksj1
+disjonctions disZ1ktj1
 disparaisses dispaREs
 disparaissons dispaREs1
 dispatching dispatSiG
@@ -2433,7 +2436,8 @@ embrouillement @bRujm@
 embrumée @bRyme
 embryogénique @bRijOZenik
 embuscade @byskad
-émergent emERZ*;emERZ@
+émergent emERZ*
+émergent emERZ@
 émerveillai emERvEjE
 émerveillées emERveje
 émétique emetik
@@ -3714,7 +3718,8 @@ inintérêt in5teRE
 ininterrompus in5tER1py
 initiatrices inisjatRis
 injectes 5ZEkt
-injections 5ZEksj1;5ZEktj1
+injections 5ZEksj1
+injections 5ZEktj1
 injustement 5Zyst*m@
 inné ine
 innervant inERv@

@@ -1394,7 +1394,8 @@ concordance CVCCVCCVCCV k1kORd@s CVCVCCVC k1-kOR-d@s CV-CVC-CVC
 concordat CVCCVCCVC k1kORda CVCVCCV k1-kOR-da CV-CVC-CV
 concrète CVCCCCCV k1kREt CVCCVC k1-kREt CV-CCVC
 concrétisèrent CVCCCVCVCCCVCC k1kRetizER CVCCVCVCVC k1-kRe-ti-zER CV-CCV-CV-CVC
-concupiscent CVCCVCVCCVCC k1kypis@;k1kypis CVCVCVCVCCVCVCVC k1-ky-pi-s@;-k1-ky-pis CV-CV-CV-CVC-CV-CV-CVC
+concupiscent CVCCVCVCCVCC k1kypis@ CVCVCVCV k1-ky-pi-s@ CV-CV-CV-CV
+concupiscent CVCCVCVCCVCC k1kypis CVCVCVC k1-ky-pis CV-CV-CVC
 concussions CVCCVCCVVCC k1kysj1 CVCVCCV k1-ky-sj1 CV-CV-CCV
 condamnant CVCCVCCVCC k1dan@ CVCVCV k1-da-n@ CV-CV-CV
 condensait CVCCVCCVVC k1d@sE CVCVCV k1-d@-sE CV-CV-CV
@@ -1542,7 +1543,8 @@ cordonnière CVCCVCCVCCV kORdOnjER CVCCVCCVC kOR-dO-njER CVC-CV-CCVC
 corés CVCVC kORe CVCV kO-Re CV-CV
 corinthien CVCVCCCVVC kOR5tj5 CVCVCCV kO-R5-tj5 CV-CV-CCV
 cornées CVCCVVC kORnER CVCCVC kOR-nER CVC-CVC
-corner CVCCVC kORne;kORnER CVCCVCCVCCVC kOR-ne;-kOR-nER CVC-CVC-CVC-CVC
+corner CVCCVC kORne CVCCV kOR-ne CVC-CV
+corner CVCCVC kORnER CVCCVC kOR-nER CVC-CVC
 cornet CVCCVC kORnE CVCCV kOR-nE CVC-CV
 corons CVCVCC kOR1 CVCV kO-R1 CV-CV
 corporations CVCCVCVCVVCC kORpORasj1 CVCCVCVCCV kOR-pO-Ra-sj1 CVC-CV-CV-CCV
@@ -2160,7 +2162,8 @@ discuterait CVCCVCVCVVC diskytRE CVCCVCCV dis-ky-tRE CVC-CV-CCV
 discutions CVCCVCVVCC diskytj1 CVCCVCCV dis-ky-tj1 CVC-CV-CCV
 disgracieuses CVCCCVCVVVCVC disgRasj2z CVCCCVCCVC dis-gRa-sj2z CVC-CCV-CCVC
 disjoignait CVCCVVCCVVC disZwaNE CVCCCVCV dis-Zwa-NE CVC-CCV-CV
-disjonctions CVCCVCCCVVCC disZ1ksj1;disZ1ktj1 CVCCVCCCVCCVCCVCCCV dis-Z1k-sj1;-dis-Z1k-tj1 CVC-CVC-CCVC-CVC-CVC-CCV
+disjonctions CVCCVCCCVVCC disZ1ksj1 CVCCVCCCV dis-Z1k-sj1 CVC-CVC-CCV
+disjonctions CVCCVCCCVVCC disZ1ktj1 CVCCVCCCV dis-Z1k-tj1 CVC-CVC-CCV
 disparaisses CVCCVCVVCCVC dispaREs CVCCVCVC dis-pa-REs CVC-CV-CVC
 disparaissons CVCCVCVVCCVCC dispaREs1 CVCCVCVCV dis-pa-RE-s1 CVC-CV-CV-CV
 dispatching CVCCVCCCVCC dispatSiG CVCCVCCVC dis-pat-SiG CVC-CVC-CVC
@@ -2433,7 +2436,8 @@ embrouillement VCCCVVVCCVCVCC @bRujm@ VCCVCCV @-bRu-jm@ V-CCV-CCV
 embrumée VCCCVCVV @bRyme VCCVCV @-bRy-me V-CCV-CV
 embryogénique VCCCVVCVCVCVV @bRijOZenik VCCVCVCVCVC @-bRi-jO-Ze-nik V-CCV-CV-CV-CVC
 embuscade VCCVCCVCV @byskad VCVCCVC @-bys-kad V-CVC-CVC
-émergent VCVCCVCC emERZ*;emERZ@ VCVCCVCVCVCCV e-mER-Z*-;e-mER-Z@ V-CVC-CV-CV-CVC-CV
+émergent VCVCCVCC emERZ* VCVCCV e-mER-Z* V-CVC-CV
+émergent VCVCCVCC emERZ@ VCVCCV e-mER-Z@ V-CVC-CV
 émerveillai VCVCCVVCCVV emERvEjE VCVCCVCV e-mER-vE-jE V-CVC-CV-CV
 émerveillées VCVCCVVCCVVC emERveje VCVCCVCV e-mER-ve-je V-CVC-CV-CV
 émétique VCVCVCVV emetik VCVCVC e-me-tik V-CV-CVC
@@ -3714,7 +3718,8 @@ inintérêt VCVCCVCVC in5teRE VCVCVCV i-n5-te-RE V-CV-CV-CV
 ininterrompus VCVCCVCCVCCVC in5tER1py VCVCVCVCV i-n5-tE-R1-py V-CV-CV-CV-CV
 initiatrices VCVCVVCCVCVC inisjatRis VCVCCVCCVC i-ni-sja-tRis V-CV-CCV-CCVC
 injectes VCCVCCVC 5ZEkt VCVCC 5-ZEkt V-CVCC
-injections VCCVCCVVCC 5ZEksj1;5ZEktj1 VCVCCCVCVCVCCCV 5-ZEk-sj1-;5-ZEk-tj1 V-CVC-CCV-CV-CVC-CCV
+injections VCCVCCVVCC 5ZEksj1 VCVCCCV 5-ZEk-sj1 V-CVC-CCV
+injections VCCVCCVVCC 5ZEktj1 VCVCCCV 5-ZEk-tj1 V-CVC-CCV
 injustement VCCVCCVCVCC 5Zyst*m@ VCVCCVCV 5-Zys-t*-m@ V-CVC-CV-CV
 inné VCCV ine VCV i-ne V-CV
 innervant VCCVCCVCC inERv@ VCVCCV i-nER-v@ V-CVC-CV
