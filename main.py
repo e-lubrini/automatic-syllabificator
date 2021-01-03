@@ -102,7 +102,7 @@ class SampaWord:
             else:
                 continue
 
-        return self.s_word
+        return "".join(self.s_word)
 
     def _get_cv(self):
 
