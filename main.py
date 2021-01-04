@@ -6,7 +6,8 @@ class FrenchWord:
     def _get_cv(self):
         # French (latin) alphabet characters
         # consonants = {'p', 't', 'k', 'b', 'd', 'g', 'f', 's', 'c', 'v', 'z', 'j', 'm', 'n', 'r', 'l', 'h'}
-        vowels = {'a', 'à', 'e', 'é', 'ê', 'ë', 'i', 'ï', 'î', 'o', 'u', 'y', 'ù'}
+        vowels = {'a', 'à', 'e', 'é', 'ê', 'ë', 'i', 'ï', 'î', 'o', 'u', 'y', 'ù', 'û', 'ù', 'ū', 'í', 'ī', 'ì', 'ô',
+                  'ö', 'ò', 'œ', 'ō', 'ø', 'â', 'á', 'ä', 'æ', 'ã', 'ā', 'ÿ', 'è', 'ē'}
         cv = ['V' if char in vowels else 'C' for char in self.word]
         return "".join(cv)
 
@@ -96,15 +97,58 @@ class SampaWord:
                     final_word += self.transcription[i:i + 2] + '-'
                     plus_i += 1
 
-            # 4 consonants between 2 vowels: V-CCCCV
+            # 4 consonants between 2 vowels: VCCCCV
             elif self.cv[i:i + 6] == 'VCCCCV':
-                final_word += self.transcription[i] + '-' + self.transcription[i + 1:i + 5]
+                # VCC-CCV
+                if self.transcription[i + 1:i + 3] == 'ks':
+                    final_word += self.transcription[i:i + 3] + '-' + self.transcription[i + 3:i + 5]
+
+                # V-CCCCV
+                elif self.s_word[i + 1] in fricatives and self.s_word[i + 2] in plosives:
+                    final_word += self.transcription[i] + '-' + self.transcription[i + 1:i + 5]
+
+                # VC-CCCV
+                elif self.s_word[i + 2] in fricatives and self.s_word[i + 3] in plosives:
+                    final_word += self.transcription[i:i + 2] + '-' + self.transcription[i + 2:i + 5]
+
+                # VCC-CCV
+                elif self.s_word[i + 3] in fricatives and self.s_word[i + 4] in plosives:
+                    final_word += self.transcription[i:i + 3] + '-' + self.transcription[i + 3:i + 5]
+
+                # VC-CCCV
+                elif self.s_word[i + 1] in plosives and self.s_word[i + 2] in plosives:
+                    final_word += self.transcription[i:i + 2] + '-' + self.transcription[i + 2:i + 5]
+
+                # VC-CCCV
+                elif self.s_word[i + 1] in plosives:
+                    final_word += self.transcription[i] + '-' + self.transcription[i + 1:i + 5]
+
+                # VCC-CCV
+                elif self.s_word[i + 2] in plosives:
+                    final_word += self.transcription[i:i + 2] + '-' + self.transcription[i + 2:i + 5]
+
+                # VCCC-CV
+                elif self.s_word[i + 3] in plosives:
+                    final_word += self.transcription[i:i + 3] + '-' + self.transcription[i + 3:i + 5]
+
+                # V-CCCCV
+                else:
+                    final_word += self.transcription[i] + '-' + self.transcription[i + 1:i + 5]
                 plus_i += 4
 
-            # 5 consonants between 2 vowels: V-CCCCCV
+            # 5 consonants between 2 vowels: VCCCCCV
             elif self.cv[i:i + 7] == 'VCCCCCV':
-                final_word += self.transcription[i] + '-' + self.transcription[i + 1:i + 6]
-                plus_i += 5
+                # 3 first consonants are not semi-vowels nor liquids: VCC-CCCV
+                if self.s_word[i + 1] not in [*liquids, *semi_vowels] and self.s_word[i + 2] not in [*liquids,
+                                                                                                     *semi_vowels] and \
+                        self.s_word[
+                            i + 3] not in [*liquids, *semi_vowels]:
+                    final_word += self.transcription[i:i + 3] + '-' + self.transcription[i + 3:i + 6]
+                    plus_i += 5
+                # some of the 3 first consonants are semi-vowels or liquids: V-CCCCCV
+                else:
+                    final_word += self.transcription[i] + '-' + self.transcription[i + 1:i + 6]
+                    plus_i += 5
 
             # 1 consonant + 1 vowel syllable: CV-
             elif self.cv[i:i + 4] == 'CVCV':

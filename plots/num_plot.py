@@ -8,7 +8,7 @@ num_stat = {
     '5': 257,
     '6': 64,
     '7': 3,
-    '8': 1
+    '8': 1,
 }
 
 left = [x for x in range(8)]
@@ -21,6 +21,5 @@ plt.gcf().set_size_inches(35, 5)
 plt.xlabel('number of syllables per word')
 plt.ylabel('frequency')
 plt.title('Distribution of the number of syllables per word')
-plt.tick_params(labelsize=10)
 
 plt.show()

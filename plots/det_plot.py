@@ -1,12 +1,12 @@
 import matplotlib.pyplot as plt
 
 det_stat = {
-    'a': 475,
+    'a': 468,
     'de': 454,
-    'e': 347,
+    'e': 327,
     'te': 313,
     'ti': 273,
-    '@': 272,
+    '@': 271,
     'Ra': 265,
     'Re': 265,
     'm@': 243,
@@ -15,7 +15,7 @@ det_stat = {
     '5': 221,
     'R*': 220,
     'se': 190,
-    'ka': 188
+    'ka': 188,
 }
 
 left = [x for x in range(15)]
@@ -23,11 +23,10 @@ height = list(det_stat.values())
 tick_label = list(det_stat.keys())
 
 plt.bar(left, height, tick_label=tick_label,
-        width=0.8, color=plt.cm.get_cmap('Blues_r', len(tick_label))(range(len(tick_label))))
+        width=0.8, color=plt.cm.get_cmap('Purples_r', len(tick_label))(range(len(tick_label))))
 plt.gcf().set_size_inches(35, 5)
-plt.xlabel('structures')
+plt.xlabel('consonants and vowels')
 plt.ylabel('frequency')
-plt.title('Distribution')
-plt.tick_params(labelsize=5.5)
+plt.title('Distribution of consonants and vowels structures')
 
 plt.show()
