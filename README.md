@@ -1,5 +1,5 @@
 # automatic-syllabificator
- A script splitting words into syllables
+ A script splitting French words into syllables
 
 **The 15 most frequent syllabic structures in French expressed with ‘C’ and ‘V’ forms:**
 
